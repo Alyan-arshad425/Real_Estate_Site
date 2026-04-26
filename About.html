@@ -1,0 +1,463 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>About - BigThreeEstate</title>
+<link rel="stylesheet" href="style.css">
+<link rel="icon" type="image/png" href="../icons/site_logo.png">
+<style>
+
+/* rest/base */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: Arial, sans-serif;
+}
+
+.hero {
+    height: 80vh;
+    background: url('../pictures/about_image.jpg') no-repeat center/cover;
+    position: relative;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.hero::before {
+    content: "";
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    background: rgba(0,0,0,0.5);
+}
+
+.hero-content {
+    position: relative;
+    color: white;
+    text-align: center;
+}
+
+.hero h1 {
+    font-size: 50px;
+}
+
+.hero p {
+    font-size: 18px;
+    margin-top: 10px;
+}
+
+/* about */
+.about-details {
+    padding: 60px 80px;
+}
+
+.about-container {
+    display: flex;
+    gap: 40px;
+    align-items: center;
+}
+
+.about-text {
+    flex: 1;
+}
+
+.about-text h2 {
+    font-size: 32px;
+    margin-bottom: 20px;
+}
+
+.about-text p {
+    font-size: 16px;
+    line-height: 1.7;
+    margin-bottom: 20px;
+    color: #4b5563;
+}
+
+/* imaegs */
+.about-image {
+    flex: 1;
+}
+
+.about-image img {
+    width: 100%;
+    border-radius: 15px;
+}
+
+/* values */
+.values {
+    background: #f3f4f6;
+    text-align: center;
+    padding: 80px 20px;
+}
+
+.values h2 {
+    font-size: 32px;
+}
+
+.values p {
+    margin-bottom: 40px;
+    color: #6b7280;
+}
+
+/* property home cards */
+.cards {
+    display: flex;
+    justify-content: center;
+    gap: 20px;
+    flex-wrap: wrap;
+}
+
+.card {
+    background: white;
+    padding:60px;
+    width: 300px;
+    border-radius: 12px;
+    box-shadow: 0 4px 10px rgba(0,0,0,0.05);
+	transition: transform 0.3s ease;
+}
+.card:hover {
+            transform: translateY(-5px);
+        }
+
+.card h3 {
+    margin-bottom: 10px;
+}
+
+.card p {
+    font-size: 14px;
+    color: #6b7280;
+}
+
+
+@media (max-width: 768px) {
+    .about-container {
+        flex-direction: column;
+    }
+}
+
+.container {
+    max-width: 1400px;
+    margin: 0 auto;
+    padding: 0 20px;
+}
+
+.team-section {
+    padding: 80px 0;
+    text-align: center;
+    background-color: #fff;
+}
+
+.section-title {
+    font-size: 2.5rem;
+    margin-bottom: 10px;
+}
+
+.section-subtitle {
+    color: #666;
+    margin-bottom: 50px;
+}
+
+.team-grid {
+    display: flex;
+    justify-content: space-between;
+    gap: 15px;
+    flex-wrap: nowrap; /* so cards can wrap on mobile */
+}
+
+.team-card {
+    background: #fff;
+    border-radius: 15px;
+    overflow: hidden;
+    box-shadow: 0 4px 15px rgba(0,0,0,0.1);
+    width: 320px; 
+}
+
+.team-img {
+    width: 100%;
+    height: 350px;
+    object-fit: cover; 
+}
+
+.team-info {
+    padding: 25px;
+}
+
+.team-info h3 {
+    margin-bottom: 5px;
+    font-size: 1.3rem;
+}
+
+.team-info p {
+    color: #777;
+    font-size: 0.95rem;
+}
+
+.process-list {
+    margin-top: 10px;
+    padding-left: 25px; /* lil more space for numbers */
+    color: #4b5563;
+    font-size: 15px;
+}
+
+.process-list li {
+    margin-bottom: 8px;
+}
+
+.process-list li::marker {
+    color: #1D5CFF;
+    font-weight: bold;
+    font-size: 16px;
+}
+/* stats */
+.stats-section {
+    background-color: #1D5CFF;
+    color: white;
+    padding: 80px 0;
+    text-align: center;
+}
+
+.stats-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: 30px;
+}
+
+.stat-number { font-size: 3.4rem; font-weight: bold; }
+.stat-label { margin: 14px; }
+.stat-desc { color: #d0dfff; font-size: 0.9rem; }
+.stats-title {
+    font-size: 32px;
+    margin-bottom: 50px; /* space for why choose*/
+    font-weight: bold;
+}
+
+.team-card {
+    transition: all 0.3s ease;
+}
+
+/* card hover */
+.team-card:hover {
+    transform: translateY(-10px);
+    box-shadow: 0 12px 30px rgba(0,0,0,0.2);
+}
+
+/* image zoomm*/
+.team-card:hover .team-img {
+    transform: scale(1.05);
+    transition: 0.3s ease;
+}
+
+.team-img {
+    transition: 0.3s ease;
+}
+
+
+
+</style>
+</head>
+
+<body>
+
+<div class="navbar">
+    <div class="logo">BigThreeEstate</div>
+    
+    <input type="checkbox" id="menu-toggle">
+    
+    <label for="menu-toggle" class="hamburger">&#9776;</label>
+
+    <div class="nav-links">
+        <a href="/Home.html">Home</a>
+        <a href="/properties.html">Properties</a>
+        <a href="/About.html" class="active">About</a>
+        <a href="/Properties.html">Contact</a>
+    </div>
+</div>
+
+<div class="hero">
+    <div class="hero-content">
+        <h1>About the Big Three</h1>
+        <p>Your trusted partner in real estate for over 10+ years</p>
+    </div>
+</div>
+
+
+<div class="about-details">
+    <div class="about-container">
+
+        <div class="about-text">
+            <h2>Our Story</h2>
+
+            <p>
+                Founded in 2011, BigThreeEstate has grown from a small local agency to one of the most respected real estate companies in the region.
+            </p>
+
+            <p>
+                With over 500 successful transactions and more than 1,200 happy clients, we've built our reputation on trust, expertise, and exceptional service.
+            </p>
+
+            <p>
+                Whether you're buying your first home, selling a property, or investing in real estate, we're here to guide you every step of the way.
+            </p>
+
+            
+            <h3 style="margin-top: 20px;">Our Process</h3>
+            <ol class="process-list">
+                <li>Understand client requirements</li>
+                <li>Find suitable properties</li>
+                <li>Arrange property visits</li>
+                <li>Finalize and close the deal</li>
+            </ol>
+        </div>
+
+        <div class="about-image">
+            <img src="../pictures/about_image2.jpg" alt="Team">
+        </div>
+
+    </div>
+</div>
+
+
+<div class="values">
+    <h2>Our Values</h2>
+    <p>The principles that guide everything we do</p>
+
+    <div class="cards">
+        <div class="card">
+			<img src="../icons/icons8-trust-64.png" alt="loading">
+            <h3>Trust</h3>
+            <p>We build strong relationships through honesty.</p>
+        </div>
+
+        <div class="card">
+			<img src="../icons/icons8-approval-64.png" alt="loading">
+            <h3>Excellence</h3>
+            <p>We deliver the highest quality service.</p>
+        </div>
+
+        <div class="card">
+			<img src="../icons/icons8-badge-64.png" alt="loading">
+            <h3>Integrity</h3>
+            <p>We act with strong moral principles.</p>
+        </div>
+
+        <div class="card">
+			<img src="../icons/icons8-handshake-64.png" alt="loading">
+            <h3>Commitment</h3>
+            <p>We are dedicated to our clients.</p>
+        </div>
+    </div>
+</div>
+
+
+
+
+
+
+
+
+<section class="team-section">
+        <div class="container">
+            <h2 class="section-title">Meet Our Team</h2>
+            <p class="section-subtitle">Experienced professionals dedicated to your success</p>
+            
+            <div class="team-grid">
+                <div class="team-card">
+                    <img src="../pictures/boss_image_6.png" alt="loading" class="team-img">
+                    <div class="team-info">
+                        <h3>John Carter</h3>
+                        <p>CEO & Founder</p>
+                    </div>
+                </div>
+
+                <div class="team-card">
+                    <img src="../pictures/boss_imaage_5.png" alt="loading" class="team-img">
+                    <div class="team-info">
+                        <h3>Riaan Shah</h3>
+                        <p>Senior Real Estate Agent</p>
+                    </div>
+                </div>
+
+                <div class="team-card">
+                    <img src="../pictures/Gemini_Generated_Image_fdr1exfdr1exfdr1.png" alt="loading" class="team-img">
+                    <div class="team-info">
+                        <h3>Muhammad Abdullah</h3>
+                        <p>Property Manager</p>
+                    </div>
+                </div>
+				 <div class="team-card">
+                    <img src="../pictures/boss_image_4.png" alt="loading" class="team-img">
+                    <div class="team-info">
+                        <h3>Muhammad Alyan Arshad</h3>
+                        <p>Property Manager</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="stats-section">
+        <div class="container">
+            <h2 class="stats-title">Why Choose BigThreeEstate?</h2>
+            <div class="stats-grid">
+                <div class="stat-item">
+                    <p class="stat-number">15+</p>
+                    <h3 class="stat-label">Years of Experience</h3>
+                    <p class="stat-desc">Over a decade of excellence in real estate services</p>
+                </div>
+                <div class="stat-item">
+                    <p class="stat-number">1,200+</p>
+                    <h3 class="stat-label">Happy Clients</h3>
+                    <p class="stat-desc">Thousands of satisfied customers who trust us</p>
+                </div>
+                <div class="stat-item">
+                    <p class="stat-number">500+</p>
+                    <h3 class="stat-label">Properties Sold</h3>
+                    <p class="stat-desc">Successfully closed deals worth millions</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+
+<footer class="main-footer">
+
+    <div class="footer-grid">
+
+        <div class="footer-col">
+            <h3>BigThreeEstate</h3>
+            <p>Your trusted partner in finding the perfect home.</p>
+        </div>
+
+        <div class="footer-col">
+            <h4>Quick Links</h4>
+            <ul>
+                <li><a href="../Html_code/Home.html">Home</a></li>
+                <li><a href="../Xml_Xsl_files/properties.xml">Properties</a></li>
+                <li><a href="../Html_code/About.html">About</a></li>
+                <li><a href="../Html_code/Contact.html">Contact</a></li>
+            </ul>
+        </div>
+
+        <div class="footer-col">
+            <h4>Contact</h4>
+            <p>Maesheal Building</p>
+            <p>Dubai, UAE</p>
+        </div>
+
+        <div class="footer-col">
+            <h4>Hours</h4>
+            <p>Mon - Fri: 9am - 6pm</p>
+            <p>Sunday: Closed</p>
+        </div>
+
+    </div>
+
+    <div class="footer-bottom">
+        © 2026 BigThreeEstate. All rights reserved.
+    </div>
+
+</footer>
+</body>
+</html>

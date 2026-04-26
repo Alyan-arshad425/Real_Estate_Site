@@ -1,0 +1,351 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Home - BigThreeEstate</title>
+    <link rel="stylesheet" href="style.css">
+	<link rel="icon" type="image/png" href="../icons/site_logo.png">
+    
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;  /* By default content-box,width:300px and padding:20px, total 340px confusing! border-box makes width:300px INCLUDE the padding, so it stays 300px total. */
+            font-family: 'Segoe UI', Arial, sans-serif; /* Windows users see: Segoe UI Mac users see: Arial (since Segoe UI isn't on Mac) Old systems: any available sans-serif */
+        }
+
+        body { 
+		line-height: 1.6; /* by default it is 1.2 */ 
+		color: #333;  /* dark charcoal */
+		}
+        .container { 
+		max-width: 1100px; 
+		margin: 0 auto; 
+		padding: 0 20px; 
+		}
+        section {
+		padding: 80px 0; 
+		}
+        a {
+		text-decoration: none; 
+		transition: 0.3s; 
+		}
+
+        .blue-bg {
+		background-color: #1d4ed8; 
+		color: white; 
+		}
+        .light-blue-bg {
+		background-color: #F0F7FF; 
+		}
+
+        /* hero */
+        .hero-section {
+            position: relative;
+            height: 650px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            overflow: hidden;
+            color: white;
+            text-align: center;
+        }
+
+        .background-video {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            z-index: -1;
+        }
+
+        .hero-section::before {
+            content: "";
+            position: absolute;
+            inset: 0;
+            background: rgba(0,0,0,0.5); /* overlay50%opacity */
+        }
+
+        .hero-content { 
+            position: relative;
+            max-width: 800px; 
+            padding: 0 20px; 
+        }
+
+        .hero-section h1 { 
+            font-size: 60px; 
+            margin-bottom: 20px; 
+        }
+
+        .hero-section p { 
+            font-size: 18px; 
+            margin-bottom: 30px; 
+        }
+
+        /* buttons */
+        .primary-btn {
+            display: inline-block;  /* padding works, button has height */
+            padding: 14px 30px; 
+            background: #2563eb;  /*  vivid blue  */
+            color: white;
+            border-radius: 8px;
+            font-weight: bold;
+        }
+
+        .primary-btn:hover { background: #1e40af; }
+
+        .outline-btn {
+            display: inline-block;
+            padding: 12px 25px;
+            border: 2px solid #1D5CFF;
+            color: #1D5CFF;
+            border-radius: 8px;
+            font-weight: bold;
+        }
+
+        .outline-btn:hover { background: #1D5CFF; color: #fff; }
+
+       
+        .call-to-action {
+            padding: 100px 0;
+            text-align: center;
+        }
+
+        .call-to-action p {
+            margin-bottom: 40px;
+            font-size: 18px;
+        }
+
+        .btn-white {
+            display: inline-block;
+            background: white;
+            color: #2563eb;
+            padding: 14px 35px;
+            border-radius: 8px;
+            font-weight: bold;
+            box-shadow: 0 4px 15px rgba(0,0,0,0.1);
+        }
+
+        .btn-white:hover { transform: translateY(-3px); }
+
+        /* stats */
+        .stats-banner { 
+            background-color: #1D5CFF; 
+            color: white; 
+            padding: 60px 0; 
+            text-align: center; 
+        }
+
+        .stats-grid { 
+            display: grid; 
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); 
+            gap: 20px; 
+        }
+
+        .stat-number { font-size: 48px; font-weight: bold; }
+        .stat-label { font-size: 18px; opacity: 0.9; }
+
+        /* the grid for properties */
+        .property-grid { 
+            display: grid; 
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); /* allow grid to auto adjust num of columns based on available screen width */
+            gap: 30px; 
+        }
+
+        .property-card {
+            background: #fff; 		/* light gray */
+            border-radius: 15px;
+            overflow: hidden; 		/* Without overflow:hidden,image would have square corners even the card is rounded,it would stick out */
+            box-shadow: 0 4px 20px rgba(0,0,0,0.08);
+            transition: 0.4s ease;	/* 0.4s ease means it starts slow, speeds up, slows downa natural feel. */
+        }
+
+        .property-card:hover { 
+            transform: translateY(-10px); 
+            box-shadow: 0 12px 35px rgba(0,0,0,0.2);
+        }
+
+        .property-card img { 
+            width: 100%; 
+            height: 220px; 
+            transition: 0.4s ease; 
+        }
+
+        .property-card:hover img { 
+            transform: scale(1.08); 
+        }
+
+        .property-details { padding: 20px; }
+
+        .property-price { 
+            color: #1D5CFF; 
+            font-size: 22px; 
+            font-weight: bold; 
+            margin-bottom: 10px; 
+        }
+
+        .property-location { 
+            color: #64748b; 
+            font-size: 14px; 
+            margin-bottom: 15px; 
+        }
+
+        .property-specs { 
+            display: flex; 
+            justify-content: space-between; 
+            padding-top: 15px; 
+            border-top: 1px solid #f1f5f9; /* a thin divider line */
+            font-size: 13px; 
+            color: #475569; /* Medium gray color */
+        }
+    </style>
+</head>
+<body>
+
+<div class="navbar">
+    <div class="logo">BigThreeEstate</div>
+    
+    <input type="checkbox" id="menu-toggle">
+    
+    <label for="menu-toggle" class="hamburger">&#9776;</label>
+
+    <div class="nav-links">
+        <a href="/Home.html" class="active">Home</a>
+        <a href="/Properties.html">Properties</a>
+        <a href="/About.html">About</a>
+        <a href="/Contact.html">Contact</a>
+    </div>
+</div>
+
+<div class="hero-section">
+    <video autoplay muted loop playsinline class="background-video">
+        <source src="../background_video/18637270-hd_1920_1080_30fps.mp4" type="video/mp4">
+    </video>
+
+    <div class="hero-content">
+        <h1>Find Your Dream Home</h1>
+        <p>Discover the perfect property from our extensive collection of luxury homes and apartments.</p>
+        <a href="../Xml_Xsl_files/properties.xml" class="primary-btn">Browse Properties →</a>
+    </div>
+</div>
+
+<div class="stats-banner"> 
+	<div class="container">
+        <div class="stats-grid">
+            <div class="stat-item">
+                <p class="stat-number">15+</p>
+                <p class="stat-label">Years of Experience</p>
+            </div>
+            <div class="stat-item">
+                <p class="stat-number">1,200+</p>
+                <p class="stat-label">Happy Clients</p>
+            </div>
+            <div class="stat-item">
+                <p class="stat-number">500+</p>
+                <p class="stat-label">Properties Sold</p>
+            </div>
+            <div class="stat-item">
+                <p class="stat-number">24/7</p>
+                <p class="stat-label">Expert Support</p>
+            </div>
+        </div>
+    </div>
+</div>
+
+<section>
+    <div class="container">
+        <h2 style="text-align: center; margin-bottom: 10px;">Featured Properties</h2>
+        <p style="text-align: center; color: #64748b; margin-bottom: 40px;">Discover our handpicked selection of premium properties</p>
+        
+        <div class="property-grid">
+            <div class="property-card">
+                <img src="../pictures/pexels-asadphoto-12720671.jpg" alt="loading">
+                <div class="property-details">
+                    <div class="property-price">AED 2,450,000</div>
+                    <h3>Modern Luxury Villa</h3>
+                    <p class="property-location">📍 Dubai Marina, UAE</p>
+                    <div class="property-specs">
+                        <span>🛏️ 6 Beds</span><span>🚿 3 Baths</span><span>📏 2,200 sqft</span>
+                    </div>
+                </div>
+            </div>
+
+            <div class="property-card">
+                <img src="../pictures/pexels-jakubzerdzicki-27075286.jpg" alt="loading">
+                <div class="property-details">
+                    <div class="property-price">AED 1,850,000</div>
+                    <h3>Apartment</h3>
+                    <p class="property-location">📍 Sharjah, UAE</p>
+                    <div class="property-specs">
+                        <span>🛏️ 2 Beds</span><span>🚿 1 Baths</span><span>📏 800 sqft</span>
+                    </div>
+                </div>
+            </div>
+
+            <div class="property-card">
+                <img src="../pictures/pexels-thanhhoa-tran-640546-1488267.jpg" alt="loading">
+                <div class="property-details">
+                    <div class="property-price">AED 3,200,000</div>
+                    <h3>Luxury Villa with Pool</h3>
+                    <p class="property-location">📍 Dubai, UAE</p>
+                    <div class="property-specs">
+                        <span>🛏️ 8 Beds</span><span>🚿 6 Baths</span><span>📏 5,000 sqft</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div style="text-align: center; margin-top: 40px;">
+            <a href="../Xml_Xsl_files/properties.xml" class="outline-btn">View All Properties →</a>
+        </div>
+    </div>
+</section>
+
+<section class="blue-bg call-to-action">
+    <div class="container">
+        <h2>Ready to Find Your Dream Home?</h2>
+        <p>Contact us today and let our expert agents help you find the perfect property.</p>
+        <a href="Contact.html" class="btn-white">Contact Us Today</a>
+    </div>
+</section>
+
+<footer class="main-footer">
+    <div class="footer-grid">
+        <div class="footer-col">
+            <h3>BigThreeEstate</h3>
+            <p>Your trusted partner in finding the perfect home.</p>
+        </div>
+
+        <div class="footer-col">
+            <h4>Quick Links</h4>
+            <ul>
+                <li><a href="../Html_code/Home.html">Home</a></li>
+                <li><a href="../Xml_Xsl_files/properties.xml">Properties</a></li>
+                <li><a href="../Html_code/About.html">About</a></li>
+                <li><a href="../Html_code/Contact.html">Contact</a></li>
+            </ul>
+        </div>
+
+        <div class="footer-col">
+            <h4>Contact</h4>
+            <p>Maesheal Building</p>
+            <p>Dubai, UAE</p>
+        </div>
+
+        <div class="footer-col">
+            <h4>Hours</h4>
+            <p>Mon - Fri: 9am - 6pm</p>
+            <p>Sunday: Closed</p>
+        </div>
+    </div>
+
+    <div class="footer-bottom">
+        © 2026 BigThreeEstate. All rights reserved.
+    </div>
+</footer>
+
+</body>
+</html>

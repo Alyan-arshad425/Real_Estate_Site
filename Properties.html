@@ -1,0 +1,340 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Properties - PrimeEstate</title>
+		<link rel="stylesheet" href="style.css">
+		
+    <style>
+        /* --- Global Reset & Base Styles --- */
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+        }
+
+        body {
+            display: flex;
+            flex-direction: column;
+            min-height: 100vh;
+            background-color: #fff;
+            color: #333;
+            line-height: 1.6;
+        }
+
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 20px;
+        }
+
+        /* --- Hero Section --- */
+        .hero {
+            text-align: center;
+            padding: 60px 20px;
+            background-color: #fff;
+        }
+
+        .hero h1 {
+            font-size: 2.5rem;
+            color: #0F172A;
+            margin-bottom: 10px;
+        }
+
+        .hero p {
+            color: #64748b;
+            font-size: 1.1rem;
+        }
+
+        /* --- Properties Grid --- */
+        section {
+            padding: 80px 0;
+        }
+
+        .property-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 30px;
+        }
+
+        .property-card {
+            background: #fff;
+            border-radius: 15px;
+            overflow: hidden;
+            box-shadow: 0 4px 20px rgba(0,0,0,0.08);
+            transition: transform 0.3s ease;
+            border: 1px solid #f1f5f9;
+        }
+
+        .property-card:hover {
+            transform: translateY(-10px);
+        }
+
+        .property-card img {
+            width: 100%;
+            height: 220px;
+            object-fit: cover;
+        }
+
+        .card-content {
+            padding: 20px;
+        }
+
+        .price {
+            color: #2563eb;
+            font-size: 1.4rem;
+            font-weight: bold;
+            margin-bottom: 5px;
+        }
+
+        .location {
+            color: #64748b;
+            font-size: 0.9rem;
+            margin-bottom: 15px;
+        }
+
+        .specs {
+            display: flex;
+            justify-content: space-between;
+            padding-top: 15px;
+            border-top: 1px solid #f1f5f9;
+            font-size: 0.85rem;
+            color: #475569;
+        }
+
+        /* --- Buttons --- */
+        .btn-outline {
+            display: inline-block;
+            padding: 12px 25px;
+            border: 2px solid #2563eb;
+            color: #2563eb;
+            text-decoration: none;
+            border-radius: 8px;
+            font-weight: bold;
+            transition: 0.3s;
+        }
+
+        .btn-outline:hover {
+            background: #2563eb;
+            color: #fff;
+        }
+
+        /* --- Footer --- */
+        .main-footer {
+            background-color: #0F172A;
+            color: #94a3b8;
+            padding: 60px 0 20px;
+            margin-top: auto;
+        }
+ 
+    </style>
+</head>
+<body>
+
+    <nav class="navbar">
+        <div class="logo">PrimeEstate</div>
+        <div class="nav-links">
+            <a href="/Home.html">Home</a>
+            <a href="/Properties.html" class="active">Properties</a>
+            <a href="/About.html">About</a>
+            <a href="/Contact.html">Contact</a>
+        </div>
+    </nav>
+
+    <header class="hero">
+        <div class="container">
+            <h1>Our Properties</h1>
+            <p>Discover our handpicked selection of premium real estate</p>
+        </div>
+    </header>
+
+    <section>
+        <div class="container">
+            <div class="property-grid">
+                <div class="property-card">
+                    <img src="pexels-manishjangid-30196347.jpg" alt="Modern Luxury Villa">
+                    <div class="card-content">
+                        <div class="price">$2,450,000</div>
+                        <h3>Modern Luxury Villa</h3>
+                        <p class="location">📍 Beverly Hills, CA</p>
+                        <div class="specs">
+                            <span>🛏️ 4 Beds</span><span>🚿 3 Baths</span><span>📏 3,200 sqft</span>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="property-card">
+                    <img src="pexels-jakubzerdzicki-27075286.jpg" alt="Contemporary Apartment">
+                    <div class="card-content">
+                        <div class="price">$1,850,000</div>
+                        <h3>Contemporary Apartment</h3>
+                        <p class="location">📍 Manhattan, NY</p>
+                        <div class="specs">
+                            <span>🛏️ 3 Beds</span><span>🚿 2 Baths</span><span>📏 2,100 sqft</span>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="property-card">
+                    <img src="pexels-ahmetcotur-35069531.jpg" alt="Luxury Villa with Pool">
+                    <div class="card-content">
+                        <div class="price">$3,200,000</div>
+                        <h3>Luxury Villa with Pool</h3>
+                        <p class="location">📍 Miami, FL</p>
+                        <div class="specs">
+                            <span>🛏️ 5 Beds</span><span>🚿 4 Baths</span><span>📏 4,500 sqft</span>
+                        </div>
+                    </div>
+                </div>
+				
+				<div class="property-card">
+                    <img src="pexels-reneterp-5157335.jpg" alt="Luxury Villa with Pool">
+                    <div class="card-content">
+                        <div class="price">$3,200,000</div>
+                        <h3>Luxury Villa with Pool</h3>
+                        <p class="location">📍 Miami, FL</p>
+                        <div class="specs">
+                            <span>🛏️ 5 Beds</span><span>🚿 4 Baths</span><span>📏 4,500 sqft</span>
+                        </div>
+                    </div>
+                </div>
+				
+				<div class="property-card">
+                    <img src="pexels-pixabay-208732.jpg" alt="Luxury Villa with Pool">
+                    <div class="card-content">
+                        <div class="price">$3,200,000</div>
+                        <h3>Luxury Villa with Pool</h3>
+                        <p class="location">📍 Miami, FL</p>
+                        <div class="specs">
+                            <span>🛏️ 5 Beds</span><span>🚿 4 Baths</span><span>📏 4,500 sqft</span>
+                        </div>
+                    </div>
+                </div>
+				
+				<div class="property-card">
+                    <img src="pexels-james-wilson-560941481-21326302.jpg" alt="Luxury Villa with Pool">
+                    <div class="card-content">
+                        <div class="price">$3,200,000</div>
+                        <h3>Luxury Villa with Pool</h3>
+                        <p class="location">📍 Miami, FL</p>
+                        <div class="specs">
+                            <span>🛏️ 5 Beds</span><span>🚿 4 Baths</span><span>📏 4,500 sqft</span>
+                        </div>
+                    </div>
+                </div>
+				
+				<div class="property-card">
+                    <img src="pexels-thekameragrapher-33621657.jpg" alt="Luxury Villa with Pool">
+                    <div class="card-content">
+                        <div class="price">$3,200,000</div>
+                        <h3>Luxury Villa with Pool</h3>
+                        <p class="location">📍 Miami, FL</p>
+                        <div class="specs">
+                            <span>🛏️ 5 Beds</span><span>🚿 4 Baths</span><span>📏 4,500 sqft</span>
+                        </div>
+                    </div>
+                </div>
+				
+				<div class="property-card">
+                    <img src="pexels-realtor-turkiye-575431660-16959786.jpg" alt="Luxury Villa with Pool">
+                    <div class="card-content">
+                        <div class="price">$3,200,000</div>
+                        <h3>Luxury Villa with Pool</h3>
+                        <p class="location">📍 Miami, FL</p>
+                        <div class="specs">
+                            <span>🛏️ 5 Beds</span><span>🚿 4 Baths</span><span>📏 4,500 sqft</span>
+                        </div>
+                    </div>
+                </div>
+				
+				<div class="property-card">
+                    <img src="pexels-miikeflicks-303343046-13395740.jpg" alt="Luxury Villa with Pool">
+                    <div class="card-content">
+                        <div class="price">$3,200,000</div>
+                        <h3>Luxury Villa with Pool</h3>
+                        <p class="location">📍 Miami, FL</p>
+                        <div class="specs">
+                            <span>🛏️ 5 Beds</span><span>🚿 4 Baths</span><span>📏 4,500 sqft</span>
+                        </div>
+                    </div>
+                </div>
+				
+				<div class="property-card">
+                    <img src="pexels-kaio-cardim-1238054-33744140.jpg" alt="Luxury Villa with Pool">
+                    <div class="card-content">
+                        <div class="price">$3,200,000</div>
+                        <h3>Luxury Villa with Pool</h3>
+                        <p class="location">📍 Miami, FL</p>
+                        <div class="specs">
+                            <span>🛏️ 5 Beds</span><span>🚿 4 Baths</span><span>📏 4,500 sqft</span>
+                        </div>
+                    </div>
+                </div>
+				
+				<div class="property-card">
+                    <img src="pexels-iwashere-15214460.jpg" alt="Luxury Villa with Pool">
+                    <div class="card-content">
+                        <div class="price">$3,200,000</div>
+                        <h3>Luxury Villa with Pool</h3>
+                        <p class="location">📍 Miami, FL</p>
+                        <div class="specs">
+                            <span>🛏️ 5 Beds</span><span>🚿 4 Baths</span><span>📏 4,500 sqft</span>
+                        </div>
+                    </div>
+                </div>
+				
+				<div class="property-card">
+                    <img src="pexels-asadphoto-12720671.jpg" alt="Luxury Villa with Pool">
+                    <div class="card-content">
+                        <div class="price">$3,200,000</div>
+                        <h3>Luxury Villa with Pool</h3>
+                        <p class="location">📍 Miami, FL</p>
+                        <div class="specs">
+                            <span>🛏️ 5 Beds</span><span>🚿 4 Baths</span><span>📏 4,500 sqft</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <footer class="main-footer">
+        <div class="container">
+            <div class="footer-grid">
+                <div class="footer-col">
+                    <h4 class="col-title">PrimeEstate</h4>
+                    <p>Your trusted partner in finding the perfect home.</p>
+                </div>
+
+                <div class="footer-col">
+                    <h4 class="col-title">Quick Links</h4>
+                    <ul class="footer-links">
+                        <li><a href="Home.html">Home</a></li>
+                        <li><a href="#">Properties</a></li>
+                        <li><a href="About.html">About Us</a></li>
+                        <li><a href="Contact.html">Contact</a></li>
+                    </ul>
+                </div>
+
+                <div class="footer-col">
+                    <h4 class="col-title">Contact</h4>
+                    <p>Masheal Lounge</p>
+                    <p>Dubai ,DU 123342</p>
+                </div>
+
+                <div class="footer-col">
+                    <h4 class="col-title">Hours</h4>
+                    <p>Mon - Fri: 9am - 6pm</p>
+                    <p>Sunday: Closed</p>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p>© 2026 PrimeEstate. All rights reserved.</p>
+            </div>
+        </div>
+    </footer>
+
+</body>
+</html>
